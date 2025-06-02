@@ -4,6 +4,7 @@ import { ProjectsButton } from "../Buttons";
 function Project() {
   const projects = [
     {
+      id: 1,
       imageUrl: "/instagram.png",
       url: "https://github.com/Mdjisan892/instagram",
       title: "Instagram UI Clone",
@@ -16,6 +17,7 @@ function Project() {
       content7: "in this build.",
     },
     {
+      id: 2,
       imageUrl: "/Online-Code-Editor.png",
       url: "https://online-code-editor-0.netlify.app/",
       title: "Online Code Editor",
@@ -28,6 +30,7 @@ function Project() {
       content7: "without limits.",
     },
     {
+      id: 3,
       imageUrl: "/Currency-Converter.png",
       url: "https://currency-converter-app-1.netlify.app/",
       title: "Currency Converter",
@@ -40,6 +43,7 @@ function Project() {
       content7: "seamlessly.",
     },
     {
+      id: 4,
       imageUrl: "/Expense-Tracker.png",
       url: "https://expense-tracker-a1.netlify.app/",
       title: "Expense Tracker",
@@ -52,6 +56,7 @@ function Project() {
       content7: "with ease.",
     },
     {
+      id: 5,
       imageUrl: "/Memory Game.png",
       url: "https://memory-game-devolopment.netlify.app/",
       title: "Memory Challenge",
@@ -61,9 +66,10 @@ function Project() {
       content4: "fun twist",
       content5: "Train your",
       content6: "brainpower",
-      content7: "while having, fun.",
+      content7: "while having fun.",
     },
     {
+      id: 6,
       imageUrl: "/Random-Password-Gen.png",
       url: "https://password-genarator-1.netlify.app/",
       title: "Password Generator",
@@ -78,28 +84,22 @@ function Project() {
   ];
 
   return (
-    <div className="-mt-[30rem]">
-      {projects.map((projectItems, index) => (
-        <div
-          key={index}
-          className=" relative w-[1050px] mx-auto max-w-[1100px] h-[570px] shadow-2xl overflow-hidden mt-10 transition-transform hover:scale-105 group outline-none rounded-md"
+    <div className=" px-4 space-y-44 -mt-[45rem] sm:-mt-[25rem]">
+      {projects.map((projectItems) => (
+        <div key={projectItems.id} className={`relative w-full max-w-5xl mx-auto h-[350px] sm:h-[500px] md:h-[550px] overflow-hidden group transition-transform duration-500 ease-in-out hover:scale-[1.02] shadow-xl ${projectItems.id % 2 === 0 ? "lg:-ml-4 xl:ml-20" : "lg:ml-4 xl:ml-8"}`}
         >
-          <Image
-            src={projectItems.imageUrl}
-            alt={projectItems.title}
-            className="object-cover w-full h-full brightness-[.65] group-hover:brightness-[.5] transition duration-300"
-            fill
+          <p className="absolute -translate-y-full group-hover:-translate-y-0 -top-7 lg:-top-12 z-10 text-[100px] lg:text-[150px] right-0 duration-500 transition-transform easy-in-out after:opacity-40 ">
+            0{projectItems.id}
+          </p>
+          <Image src={projectItems.imageUrl} alt={projectItems.title} fill sizes="(max-width: 768px) 100vw, 70vw" priority className="object-cover w-full h-full transition duration-500 ease-in-out brightness-75 group-hover:brightness-50 opacity-70"
           />
+          <div className="absolute w-full h-full top-0 b bg-gradient-to-l from-[#111D3F]/70 to-[#2258A3]/60 transition-transform -translate-x-full group-hover:-translate-x-0 duration-500 ease-in-out" />
 
-          <div className="absolute inset-0 overflow-hidden backdrop-blur-[1px]">
-            <div className="absolute top-0 left-0 bottom-0 w-full bg-gradient-to-l from-[#111D3F] to-[#2258A3] -translate-x-full group-hover:-translate-x-0 transition-transform duration-300 ease-in-out" />
-          </div>
-
-          <div className="absolute bottom-8 left-8 right-8 text-white group-hover:-translate-y-4 duration-300">
-            <h2 className="text-4xl md:text-5xl font-bold">
+          <div className="absolute bottom-8 left-6 sm:left-10 right-6 text-white transition-all duration-500 ease-in-out group-hover:-translate-y-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
               {projectItems.title}
             </h2>
-            <p className="italic text-lg mt-1">
+            <p className="italic text-base sm:text-lg mt-2 leading-snug">
               "{projectItems.content1}{" "}
               <span className="text-red-500 font-semibold">
                 {projectItems.content2}
@@ -108,13 +108,13 @@ function Project() {
               <span className="text-red-500 font-semibold">
                 {projectItems.content4}
               </span>
-              .{projectItems.content5}{" "}
+              . {projectItems.content5}{" "}
               <span className="text-red-500 font-semibold">
                 {projectItems.content6}
               </span>{" "}
-              {projectItems.content7}
+              {projectItems.content7}"
             </p>
-            <div className="mt-4 w-[7.5rem]">
+            <div className="mt-4 w-fit">
               <ProjectsButton url={projectItems.url} />
             </div>
           </div>
