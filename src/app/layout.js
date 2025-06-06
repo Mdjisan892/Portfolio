@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Jisan - Interactive Front-end Developer",
   description: "Md Jisan - Be sure to checkout this before internet close",
+  icons : {
+    icon : "/favicon.png"
+  }
 };
 
 export default function RootLayout({ children }) {

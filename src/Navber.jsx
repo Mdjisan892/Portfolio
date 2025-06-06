@@ -23,7 +23,6 @@ function Navber() {
         </g>
       </svg>
     </Link>
-      
 
       <ThemeButton />
     </nav>
