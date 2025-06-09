@@ -88,10 +88,10 @@ function Project() {
       {projects.map((projectItems) => (
         <div key={projectItems.id} className={`relative w-full max-w-5xl mx-auto h-[350px] sm:h-[500px] md:h-[550px] overflow-hidden group transition-transform duration-500 ease-in-out hover:scale-[1.02] shadow-xl ${projectItems.id % 2 === 0 ? "lg:-ml-4 xl:ml-20" : "lg:ml-4 xl:ml-8"}`}
         >
-          <p className="absolute -translate-y-full group-hover:-translate-y-0 -top-7 lg:-top-12 z-10 text-[100px] lg:text-[150px] right-0 duration-500 transition-transform easy-in-out after:opacity-40 ">
+          <p className="absolute -translate-y-full group-hover:-translate-y-0 -top-7 lg:-top-12 z-10 text-[100px] lg:text-[150px] right-0 duration-500 transition-transform easy-in-out text-white">
             0{projectItems.id}
           </p>
-          <Image src={projectItems.imageUrl} alt={projectItems.title} fill sizes="(max-width: 768px) 100vw, 70vw" priority className="object-cover w-full h-full transition duration-500 ease-in-out brightness-75 group-hover:brightness-50 opacity-70"
+          <Image src={projectItems.imageUrl} alt={projectItems.title} fill sizes="(max-width: 768px) 100vw, 70vw" priority className="object-cover w-full h-full transition duration-500 ease-in-out brightness-75 group-hover:brightness-50 dark:opacity-70 group-hover:opacity-70"
           />
           <div className="absolute w-full h-full top-0 b bg-gradient-to-l from-[#111D3F]/70 to-[#2258A3]/60 transition-transform -translate-x-full group-hover:-translate-x-0 duration-500 ease-in-out" />
 
